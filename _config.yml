@@ -1,3 +1,6 @@
 theme: jekyll-theme-modernist
 title: 学无止境
 description: 学习笔记和胡乱吐槽🙄
+
+# Build settings
+markdown: kramdown
