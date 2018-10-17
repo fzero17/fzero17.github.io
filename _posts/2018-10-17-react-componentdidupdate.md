@@ -6,7 +6,7 @@ categories: react
 ---
 
 
-今天使用 componentWillReceiveProps，始终都不能获取到 state 更新后的正确状态，后来查阅 API，改成了 componentDidUpdate ，获取到了正常的数据。
+今天使用 componentWillReceiveProps，始终都不能获取到 props 更新后的正确状态，后来查阅 API，改成了 componentDidUpdate ，获取到了正常的数据。
 
 为什么？
 
