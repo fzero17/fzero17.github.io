@@ -17,7 +17,8 @@ categories: css3
 
 ### REM 的用法
 
-在张鑫旭大大的这篇[文章](https://www.zhangxinxu.com/wordpress/2016/08/vw-viewport-responsive-layout-typography/)中，讲到了 vw + rem 的用法，代码中并没有出现 rem 这个单位。所以有些情况下只需要给 root 元素定义好大小即可。（_不知道这样理解是否有误_）
+在张鑫旭大大的这篇[基于 vw 等 viewport 视区单位配合 rem 响应式排版和布局
+](https://www.zhangxinxu.com/wordpress/2016/08/vw-viewport-responsive-layout-typography/)中，讲到了 vw + rem 的用法，代码中并没有出现 rem 这个单位。所以有些情况下只需要给 root 元素定义好大小即可。（_不知道这样理解是否有误_）
 
 另外在 MDN 上 [How can we design for all types of users？](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Design_for_all_types_of_users) 这篇文章中，列举了 rem 的用法，如下。
 
@@ -53,4 +54,17 @@ span.subheading {
 } /* original size */
 ```
 
-以上。
+### REM 的用途
+
+针对不同屏幕的适配，可以使用 rem。
+
+### 参考资料
+
+[CSS 的值和单位](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Introduction_to_CSS/Values_and_units)
+
+[How can we design for all types of users？](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Design_for_all_types_of_users)
+
+[基于 vw 等 viewport 视区单位配合 rem 响应式排版和布局
+](https://www.zhangxinxu.com/wordpress/2016/08/vw-viewport-responsive-layout-typography/)
+
+[移动 web 适配利器-rem](http://www.alloyteam.com/2016/03/mobile-web-adaptation-tool-rem/)
