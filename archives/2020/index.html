@@ -50,17 +50,14 @@
   };
 </script>
 
-  <meta name="description" content="最近系统大重构后，现场出现了很多问题，花费了大量时间去实现的功能护士说用起来也就那样，一个是经常出现各种问题，二是用户体验没有做好。有一点挫败感，并且有点怀疑自己了。出现问题没有关系，必须要做的事情是从这次的失败中吸取教训，知耻而后勇。下面是几点总结。1.功能迭代小步前进。这次发版有一个很大的问题，就是产品经理想要发布一些功能，而我这边却因为很多功能都合并到dev分支上导致已经正常的功能无法发布。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="重构系统后的一些总结">
-<meta property="og:url" content="http:&#x2F;&#x2F;uscteam.com&#x2F;2017&#x2F;11&#x2F;14&#x2F;summary&#x2F;index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="学无止境">
+<meta property="og:url" content="http:&#x2F;&#x2F;uscteam.com&#x2F;archives&#x2F;2020&#x2F;index.html">
 <meta property="og:site_name" content="学无止境">
-<meta property="og:description" content="最近系统大重构后，现场出现了很多问题，花费了大量时间去实现的功能护士说用起来也就那样，一个是经常出现各种问题，二是用户体验没有做好。有一点挫败感，并且有点怀疑自己了。出现问题没有关系，必须要做的事情是从这次的失败中吸取教训，知耻而后勇。下面是几点总结。1.功能迭代小步前进。这次发版有一个很大的问题，就是产品经理想要发布一些功能，而我这边却因为很多功能都合并到dev分支上导致已经正常的功能无法发布。">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-11-28T10:20:21.631Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://uscteam.com/2017/11/14/summary/">
+<link rel="canonical" href="http://uscteam.com/archives/2020/">
 
 
 <script id="page-configurations">
@@ -68,13 +65,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: true,
+    isPost: false,
     isPage: false,
-    isArchive: false
+    isArchive: true
   };
 </script>
 
-  <title>重构系统后的一些总结 | 学无止境</title>
+  <title>Archive | 学无止境</title>
   
 
 
@@ -168,90 +165,49 @@
           <div class="content">
             
 
-  <div class="posts-expand">
-      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh">
-    <link itemprop="mainEntityOfPage" href="http://uscteam.com/2017/11/14/summary/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Fzero">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学无止境">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          重构系统后的一些总结
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2017-11-14 18:19:50" itemprop="dateCreated datePublished" datetime="2017-11-14T18:19:50+08:00">2017-11-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-28 18:20:21" itemprop="dateModified" datetime="2019-11-28T18:20:21+08:00">2019-11-28</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <span class="collection-header">Um..! 9 posts in total. Keep on posting.</span>
+      </div>
 
       
-        <p>最近系统大重构后，现场出现了很多问题，花费了大量时间去实现的功能护士说用起来也就那样，一个是经常出现各种问题，二是用户体验没有做好。有一点挫败感，并且有点怀疑自己了。<br>出现问题没有关系，必须要做的事情是从这次的失败中吸取教训，知耻而后勇。<br>下面是几点总结。<br>1.功能迭代小步前进。<br>这次发版有一个很大的问题，就是产品经理想要发布一些功能，而我这边却因为很多功能都合并到dev分支上导致已经正常的功能无法发布。以后还是严格按照feature和bug来修改代码和合并代码。<br>2.版本需要可以随时回退。<br>这个必须要做到，如果出现了重大问题的时候，就需要把版本回退到之前的。这个其实就和第1点相关了，如果不把功能分开，一次发版中某个小功能出了问题就需要把所有的功能都回退，否则就只能让生产环境一直出问题然后像救火似的去修复问题。如果能够按照小功能回退，就可以把出问题的地方回滚，而其他功能依然能够正常使用。<br>3.原有的功能不要去动它。<br>现在我们后台是比较偏向于稳定的，原因就在于后台不会去修改已有功能的代码。如果要新增一个功能，或者是原有的功能已经稳定了，就不要再去修改它了，而是新增一个入口去替换他。<br>4.技能的提升。<br>目前还有很多问题没有解决，主要的问题是我的技能水平还不够，知道和了解的太少。<br>5.用户体验特别重要。<br>6.测试必须要到位。并且开发的测试就要到位，明知道有问题的代码就不要提交到生产分支上。必须保证生产分支的代码是随时可用的！</p>
-
+    <div class="collection-year">
+      <h1 class="collection-header">2020</h1>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-      <footer class="post-footer">
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-01-19T16:11:34+08:00"
+              content="2020-01-19">
+          01-19
+        </time>
+      </div>
 
-        
+      <h2 class="post-title">
+          <a class="post-title-link" href="/2020/01/19/anxiety/" itemprop="url">
+            <span itemprop="name">anxiety</span>
+          </a>
+      </h2>
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-                <a href="/2017/01/08/the-year-of-2016/" rel="next" title="致逝去的2016，展望2017">
-                  <i class="fa fa-chevron-left"></i> 致逝去的2016，展望2017
-                </a>
-            </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-                <a href="/2018/01/24/2018/" rel="prev" title="关于2018年的一些计划">
-                  关于2018年的一些计划 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-      </footer>
-    
+    </header>
   </article>
+
+
+    </div>
+  </div>
   
   
   
 
-  </div>
+  
+
 
 
           </div>
