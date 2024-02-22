@@ -5,7 +5,7 @@
   <!-- title -->
   <% if (page.total > 1){ %>
     <% if (page.current === 1) { %>
-  <title><%= config.title %> - <%= config.subtitle %></title>
+  <title><%= config.title %>  <%= config.subtitle %></title>
     <% } else { %>
   <title>第<%= page.current %>页 - <%= config.title %></title>
     <% } %>
@@ -17,11 +17,11 @@
     <% } else if (is_tag()) { %>
   <title><%= page.tag %> - <%= config.title %></title>
     <% } else if (is_post()) { %>
-  <title><%= page.title %> - <%= config.title %></title>
+  <title><%= page.title %></title>
     <% } else if (page.path === 'index.html' || page.path === '') { %>
   <title><%= config.title %> - <%= config.subtitle %></title>
     <% } else { %>
-  <title><%= page.title %> - <%= config.title %></title>
+  <title><%= page.title %></title>
     <% } %>
   <% } %>
   
