@@ -8,3 +8,4 @@ tags:
 - 生成requirements.txt `pip3 freeze > ./requirements.txt`
 - 安装requirements.txt `pip3 install -r requirements.txt`
 - 新建app `python manage.py startapp app_name`
+- 设置默认密码 `python manage.py createsuperuser`
