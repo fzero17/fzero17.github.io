@@ -10,3 +10,4 @@ tags:
 ### TailwindCSS
 - 首次接触感觉命名难记。
 - color 大部分是 text-[color], bg-[color] 这样的命名方式。
+- 浏览器默认字体大小是 16px，在 tailwind 中 1rem = 16px。
