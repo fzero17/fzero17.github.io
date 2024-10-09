@@ -288,7 +288,7 @@ a
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 24px;
-    min-width: 800px;
+    /*min-width: 800px;*/
 }
 .post-main-title
 {
