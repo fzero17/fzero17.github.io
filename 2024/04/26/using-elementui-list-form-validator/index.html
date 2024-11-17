@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+  <meta name="robots" content="index, follow">
+  <!-- title -->
+  
+    
+  <title>ElementUI 表单验证</title>
+    
+  
+  
+  <!-- open graph -->
+  <meta name="description" content="在后台管理项目中，表单是一个经常使用的组件，为了在以后的项目中能够更加高效地实现表单功能，这里记录一下在 Vue 项目中使用 element-ui 的 Form 组件时，对表单进行验证的方法。 一、基本使用  可以做一些简单的验证，如必填、长度限制等。  &lt;template&gt;&lt;el-form&gt;    &lt;el-form-item label&#x3D;&quot;用户名&quot; prop&#x3D;&quot;us">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ElementUI 表单验证">
+<meta property="og:url" content="https://fzero17.com/2024/04/26/using-elementui-list-form-validator/index.html">
+<meta property="og:site_name" content="fzero 的博客">
+<meta property="og:description" content="在后台管理项目中，表单是一个经常使用的组件，为了在以后的项目中能够更加高效地实现表单功能，这里记录一下在 Vue 项目中使用 element-ui 的 Form 组件时，对表单进行验证的方法。 一、基本使用  可以做一些简单的验证，如必填、长度限制等。  &lt;template&gt;&lt;el-form&gt;    &lt;el-form-item label&#x3D;&quot;用户名&quot; prop&#x3D;&quot;us">
+<meta property="og:locale" content="zh">
+<meta property="article:published_time" content="2024-04-26T07:05:34.000Z">
+<meta property="article:modified_time" content="2024-11-17T04:54:31.402Z">
+<meta property="article:author" content="Fzero">
+<meta property="article:tag" content="技术">
+<meta name="twitter:card" content="summary">
+  <!-- canonical -->
+  
+  <link rel="canonical" href="https://fzero17.com/2024/04/26/using-elementui-list-form-validator/">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <!-- CSS -->
+  
+<link rel="stylesheet" href="/css/reset.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/markdown.css">
+
+  
+<link rel="stylesheet" href="/css/fonts.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+    <a class="logo" href="/">fzero 的博客</a>
+    <!-- <div class="logo"><a href="/" title="Len"><img src="/img/logo.svg" alt="Len" aria-label="logo" height="20"></a></div> -->
+        <ul class="nav">
+            
+            <li><a href="/">Home</a></li>
+            
+            <li><a href="https://fzero17.com/webmemo">Memo</a></li>
+            
+        </ul>
+
+
+    </a>
+</div>
+
+                
+                <div class="post-main">
+    
+        <div class="post-main-title">
+            ElementUI 表单验证
+        </div>
+        <div class="post-meta">
+            2024-04-26
+                <!-- 统计字数 -->
+                <span>｜ 字数：9677</span>｜
+                
+        </div>
+        <!-- 圆角分类 -->
+        <!-- <div class="tags"> -->
+        <!--  -->
+        <!-- </div> -->
+        <div class="post-md">
+            <p>在后台管理项目中，表单是一个经常使用的组件，为了在以后的项目中能够更加高效地实现表单功能，这里记录一下在 Vue 项目中使用 element-ui 的 Form 组件时，对表单进行验证的方法。</p>
+<p>一、基本使用</p>
+<blockquote>
+<p>可以做一些简单的验证，如必填、长度限制等。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;el-form&gt;</span><br><span class="line">    &lt;el-form-item label=<span class="string">"用户名"</span> prop=<span class="string">"username"</span>&gt;</span><br><span class="line">        &lt;el-input v-model=<span class="string">"form.username"</span>&gt;&lt;<span class="regexp">/el-input&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>el-form-item&gt;</span><br><span class="line">    &lt;el-form-item label=<span class="string">"密码"</span> prop=<span class="string">"password"</span>&gt;</span><br><span class="line">        &lt;el-input v-model=<span class="string">"form.password"</span>&gt;&lt;<span class="regexp">/el-input&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>el-form-item&gt;</span><br><span class="line">&lt;<span class="regexp">/el-form&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            form: &#123;</span><br><span class="line">                username: <span class="string">''</span>,</span><br><span class="line">                password: <span class="string">''</span></span><br><span class="line">            &#125;,</span><br><span class="line">            rules: &#123;</span><br><span class="line">                username: [</span><br><span class="line">                    &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">'请输入用户名'</span>, <span class="attr">trigger</span>: <span class="string">'blur'</span> &#125;</span><br><span class="line">                ],</span><br><span class="line">                password: [</span><br><span class="line">                    &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">'请输入密码'</span>, <span class="attr">trigger</span>: <span class="string">'blur'</span> &#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>二、validator</p>
+<blockquote>
+<p>可以做一些复杂的验证，如正则验证、自定义验证等。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;el-form :model=<span class="string">"form"</span> :rules=<span class="string">"rules"</span>&gt;</span><br><span class="line">    &lt;el-form-item label=<span class="string">"用户名"</span> prop=<span class="string">"username"</span>&gt;</span><br><span class="line">        &lt;el-input v-model=<span class="string">"form.username"</span>&gt;&lt;<span class="regexp">/el-input&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>el-form-item&gt;</span><br><span class="line">    &lt;el-form-item label=<span class="string">"密码"</span> prop=<span class="string">"password"</span>&gt;</span><br><span class="line">        &lt;el-input v-model=<span class="string">"form.password"</span>&gt;&lt;<span class="regexp">/el-input&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>el-form-item&gt;</span><br><span class="line">&lt;<span class="regexp">/el-form&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            form: &#123;</span><br><span class="line">                username: <span class="string">''</span>,</span><br><span class="line">                password: <span class="string">''</span></span><br><span class="line">            &#125;,</span><br><span class="line">            rules: &#123;</span><br><span class="line">                username: [</span><br><span class="line">                    &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">'请输入用户名'</span>, <span class="attr">trigger</span>: <span class="string">'blur'</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">min</span>: <span class="number">3</span>, <span class="attr">max</span>: <span class="number">5</span>, <span class="attr">message</span>: <span class="string">'长度在 3 到 5 个字符'</span>, <span class="attr">trigger</span>: <span class="string">'blur'</span> &#125;</span><br><span class="line">                ],</span><br><span class="line">                password: [</span><br><span class="line">                    &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">'请输入密码'</span>, <span class="attr">trigger</span>: <span class="string">'blur'</span> &#125;,</span><br><span class="line">                    &#123; <span class="attr">validator</span>: <span class="keyword">this</span>.validatePassword, <span class="attr">trigger</span>: <span class="string">'blur'</span> &#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        validatePassword(rule, value, callback) &#123;</span><br><span class="line">            <span class="keyword">if</span> (value === <span class="string">''</span>) &#123;</span><br><span class="line">                callback(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'请输入密码'</span>));</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (value.length &lt; <span class="number">6</span>) &#123;</span><br><span class="line">                    callback(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'密码长度不能小于 6 位'</span>));</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    callback();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>三、表单列表验证</p>
+<blockquote>
+<p>验证表单列表。例如，验证每一行的输入框是否为空。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;el-form :model=<span class="string">"form"</span> :rules=<span class="string">"rules"</span>&gt;</span><br><span class="line">    &lt;el-form-item v-<span class="keyword">for</span>=<span class="string">"(user, index) in users"</span></span><br><span class="line">    :key=<span class="string">"index"</span></span><br><span class="line">    label=<span class="string">"用户名"</span></span><br><span class="line">    :prop=<span class="string">"users.$&#123;index&#125;.username"</span></span><br><span class="line">    :rules=[&#123;<span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">'请输入用户名'</span>, <span class="attr">trigger</span>: <span class="string">'blur'</span>&#125;]</span><br><span class="line">    &gt;</span><br><span class="line">        &lt;el-input v-model=<span class="string">"user.username"</span>&gt;&lt;<span class="regexp">/el-input&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>el-form-item&gt;</span><br><span class="line">&lt;<span class="regexp">/el-form&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            users: [</span><br><span class="line">                &#123;<span class="attr">username</span>: <span class="string">''</span>, <span class="attr">password</span>: <span class="string">''</span> &#125;,</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+                <!-- tags -->
+                
+                    <div class="post-meta">
+                        标签：
+                        
+                            <a href="/tags/%E6%8A%80%E6%9C%AF/"> / 技术</a>
+                            
+                    </div>
+                    
+</div>
+                <div class="footer">
+    <span>Copyright © 2024 fzero 的博客</span>
+    <span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> with <a href="https:///imzl.com/zenmind" target="_blank" rel="noopener">ZenMind</a></span>
+</div>
+
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+
+<script src="/js/highlight.min.js"></script>
+
+
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+            </div>
+        </div>
+    </body>
+</html>
