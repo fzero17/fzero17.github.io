@@ -5,7 +5,7 @@
         <% for (name in theme.menu) { %>
             <li>
                 <a href="<%- url_for(theme.menu[name]) %>"
-                <% if (name === 'Memo') { %> target="_blank" <% } %>>
+                <% if (name === 'WebMemo' || name === 'Running') { %> target="_blank" <% } %>>
                     <%= name %>
                 </a>
             </li>
