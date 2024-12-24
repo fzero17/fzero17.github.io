@@ -58,7 +58,7 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 20
+  per_page: 5
   order_by: -date
 
 # Category & Tag
@@ -81,7 +81,7 @@ use_date_for_updated: false
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 20
+per_page: 5
 pagination_dir: page
 
 # Include / Exclude file(s)
@@ -101,3 +101,9 @@ deploy:
   type: 'git'
   repo: git@github.com:fzero17/fzero17.github.io.git
   branch: master
+
+excerpt:
+  depth: 150
+  excerpt_excludes: []
+  more_excludes: []
+  hideWholePostExcerpts: false

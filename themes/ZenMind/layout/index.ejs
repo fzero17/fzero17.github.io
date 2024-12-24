@@ -1,9 +1,29 @@
-<div class="post-list">
+<!-- <div class="post-list">
     <% page.posts.each(function (post) { %>
     <div class="post">
         <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
         <div class="post-date"><%- date(post.date, "YYYY.MM.DD") %></div>
     </div>
+    <% }) %>
+</div>
+<%- partial('_partial/paginator') %> -->
+
+<div class="post-list">
+    <% page.posts.each(function (post, index) { %>
+        <div class="post <%= index === 0 ? 'post-featured' : '' %>">
+            <a class="post-title" href="<%- url_for(post.path) %>">
+                <%= post.title %>
+            </a>
+            <div class="post-date"><%- date(post.date, "YYYY.MM.DD" ) %></div>
+            <div class="post-excerpt">
+                <% if (index === 0) { %>
+                    <%- post.content %>
+                <% } else { %>
+                    <%- strip_html(post.excerpt || post.content).substring(0, 150).replace(/\n/g, '<br>') + "..." %>
+                <% } %>
+            </div>
+            <a class="read-more" href="<%- url_for(post.path) %>">更多...</a>
+        </div>
     <% }) %>
 </div>
 <%- partial('_partial/paginator') %>
