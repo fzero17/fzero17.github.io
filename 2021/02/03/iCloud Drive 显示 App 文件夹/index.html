@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+  <meta name="robots" content="index, follow">
+  <!-- title -->
+  
+    
+  <title>iCloud Drive 显示 App 文件夹</title>
+    
+  
+  
+  <!-- open graph -->
+  <meta name="description" content="要想在 iCloud Drive 中显示App的文件夹，很简单，只要下面这两步操作。  在设备上登陆苹果账号，并开启同步功能。  在 Info.plist 中设置以下内容：   &lt;key&gt;NSUbiquitousContainers&lt;&#x2F;key&gt;    &lt;dict&gt;        &lt;key&gt;iCloud.com.example.MyApp&lt;&#x2F;ke">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iCloud Drive 显示 App 文件夹">
+<meta property="og:url" content="https://fzero17.com/2021/02/03/iCloud%20Drive%20%E6%98%BE%E7%A4%BA%20App%20%E6%96%87%E4%BB%B6%E5%A4%B9/index.html">
+<meta property="og:site_name" content="fzero 的日常记录">
+<meta property="og:description" content="要想在 iCloud Drive 中显示App的文件夹，很简单，只要下面这两步操作。  在设备上登陆苹果账号，并开启同步功能。  在 Info.plist 中设置以下内容：   &lt;key&gt;NSUbiquitousContainers&lt;&#x2F;key&gt;    &lt;dict&gt;        &lt;key&gt;iCloud.com.example.MyApp&lt;&#x2F;ke">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-02-03T03:08:27.000Z">
+<meta property="article:modified_time" content="2024-12-24T02:57:10.764Z">
+<meta property="article:author" content="Fzero">
+<meta name="twitter:card" content="summary">
+  <!-- canonical -->
+  
+  <link rel="canonical" href="https://fzero17.com/2021/02/03/iCloud Drive 显示 App 文件夹/">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <!-- CSS -->
+  
+<link rel="stylesheet" href="/css/reset.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/markdown.css">
+
+  
+<link rel="stylesheet" href="/css/fonts.css">
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+    <a class="logo" href="/">fzero 的日常记录</a>
+    <!-- <div class="logo"><a href="/" title="Len"><img src="/img/logo.svg" alt="Len" aria-label="logo" height="20"></a></div> -->
+        <ul class="nav">
+            
+            <li><a href="/">Home</a></li>
+            
+            <li><a href="https://fzero17.com/webmemo">WebMemo</a></li>
+            
+            <li><a href="https://fzero17.com/running_page">Running</a></li>
+            
+        </ul>
+
+
+    </a>
+</div>
+
+                
+                <div class="post-main">
+    
+        <div class="post-main-title">
+            iCloud Drive 显示 App 文件夹
+        </div>
+        <div class="post-meta">
+            2021-02-03
+                <!-- 统计字数 -->
+                <span>｜ 字数：1902</span>｜
+                
+        </div>
+        <!-- 圆角分类 -->
+        <!-- <div class="tags"> -->
+        <!--  -->
+        <!-- </div> -->
+        <div class="post-md">
+            <p>要想在 iCloud Drive 中显示App的文件夹，很简单，只要下面这两步操作。</p>
+<ul>
+<li><p>在设备上登陆苹果账号，并开启同步功能。</p>
+</li>
+<li><p>在 <code>Info.plist</code> 中设置以下内容：</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;key&gt;NSUbiquitousContainers&lt;/key&gt;</span><br><span class="line">    &lt;dict&gt;</span><br><span class="line">        &lt;key&gt;iCloud.com.example.MyApp&lt;/key&gt;</span><br><span class="line">        &lt;dict&gt;</span><br><span class="line">            &lt;key&gt;NSUbiquitousContainerIsDocumentScopePublic&lt;/key&gt;</span><br><span class="line">            &lt;true/&gt;</span><br><span class="line">            &lt;key&gt;NSUbiquitousContainerSupportedFolderLevels&lt;/key&gt;</span><br><span class="line">            &lt;string&gt;Any&lt;/string&gt;</span><br><span class="line">            &lt;key&gt;NSUbiquitousContainerName&lt;/key&gt;</span><br><span class="line">            &lt;string&gt;MyApp&lt;/string&gt;</span><br><span class="line">        &lt;/dict&gt;</span><br><span class="line">    &lt;/dict&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>来源：<a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/General/Conceptual/iCloudDesignGuide/Chapters/DesigningForDocumentsIniCloud.html#//apple_ref/doc/uid/TP40012094-CH2-SW20">Enabling Document Storage in iCloud Drive</a></p>
+</blockquote>
+<p>在具体操作时可能会遇到下面的一些问题：</p>
+<ul>
+<li>文件夹不在 iCloud Drive 中显示</li>
+<li>同步的音频文件无法正常播放</li>
+</ul>
+<p>按照下面的方法可以解决</p>
+<p><code>修改Build版本号，重新运行</code>。</p>
+<blockquote>
+<p>来源：</p>
+<p><a target="_blank" rel="noopener" href="https://arc-lin.github.io/2016/10/29/cj66ozfny0039b7fyfvx6dm35/">在 iCloud Drive中显示 App的iCloud文件夹</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/30385940/why-my-app-is-not-shown-in-icloud-drive-folder">StackOverflow</a></p>
+</blockquote>
+<p>最后，还有一个问题：文件夹不在没有运行App的设备的 iCloud Drive 中显示。</p>
+
+        </div>
+        
+                <!-- tags -->
+                
+</div>
+                <div class="footer">
+    <span>Copyright © 2024 fzero 的日常记录</span>
+    <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> with <a target="_blank" rel="noopener" href="https:///imzl.com/zenmind">ZenMind</a></span>
+</div>
+
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+
+<script src="/js/highlight.min.js"></script>
+
+
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+            </div>
+        </div>
+    </body>
+</html>
