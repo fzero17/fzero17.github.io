@@ -85,6 +85,11 @@
                 <!-- <div class="post-list">
     
     <div class="post">
+        <a class="post-title" href="/what-is-chatgpt-doing-and-why-does-it-work/">《这就是 ChatGPT 》 读书笔记</a>
+        <div class="post-date">2024.04.26</div>
+    </div>
+    
+    <div class="post">
         <a class="post-title" href="/docker-memo/">docker-memo</a>
         <div class="post-date">2024.04.15</div>
     </div>
@@ -104,52 +109,59 @@
         <div class="post-date">2024.03.28</div>
     </div>
     
-    <div class="post">
-        <a class="post-title" href="/202403/">202403</a>
-        <div class="post-date">2024.03.11</div>
-    </div>
-    
 </div>
 
 <div class="paginator">
-    <a class="extend prev" rel="prev" href="/page/4/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/">下一页</a>
+    <a class="extend prev" rel="prev" href="/page/4/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/">下一页</a>
 </div>
  -->
 
 <div class="post-list">
     
         <div class="post post-featured">
+            <a class="post-title" href="/what-is-chatgpt-doing-and-why-does-it-work/">
+                《这就是 ChatGPT 》 读书笔记
+            </a>
+            <div class="post-date">2024.04.26</div>
+            <div class="post-excerpt">
+                
+                    <p>通读整本书，作者认为 ChatGPT 能生成有意义的文本，也像是一种玄学。比较简单的模型还能用科学来解释，GPT 这样复杂的大模型已经无法用科学来解释了。（这是我个人的理解）</p>
+<p>大佬写的书特别通俗易懂，看完能大概了解 ChatGPT 的原理。下面是我的一部分摘抄。</p>
+<h3 id="ChatGPT-在做什么"><a href="#ChatGPT-在做什么" class="headerlink" title="ChatGPT 在做什么"></a>ChatGPT 在做什么</h3><ul>
+<li><p>想象一下浏览人类编写的数十亿页文本（比如在互联网上和电子书中），找到该文本的所有实例，然后看看接下来出现的是什么词，以及这些词出现的概率是多少。ChatGPT 实际上做了类似的事情，只不过它不是查看字面上的文本，而是寻找在某种程度上“意义匹配”的事物。</p>
+</li>
+<li><p>当 ChatGPT 做一些事情，比如写一篇文章时，它实质上只是在一遍又一遍地询问“根据目前的文本，下一个词应该是什么”，并且每次都添加一个词。</p>
+</li>
+<li><p>温度（temperature)。 符合玄学思想的是，有一个所谓的“温度”参数来确定低排名词的使用频率。对于文章生成来说，“温度”为 0.8 似乎最好。（二八定律？）</p>
+</li>
+<li><p>ChatGPT 的原始输入是一个由数组成的数组（到目前为止标记的嵌入向量）。当 ChatGPT“运行”以产生新标记时，这些数就会“依次通过”神经网络的各层，而每个神经元都会“做好本职工作”并将结果传递给下一层的神经元。没有循环和“回顾”。一切都是在网络中“向前馈送”的。</p>
+</li>
+</ul>
+<h3 id="一些名词"><a href="#一些名词" class="headerlink" title="一些名词"></a>一些名词</h3><blockquote>
+<p>以下名词是我在阅读过程中有不理解的地方，通过 ChatGPT 了解的释义，仅供参考。</p>
+</blockquote>
+<ul>
+<li><p>token：在 GPT（Generative Pre-trained Transformer）和其他自然语言处理（NLP）模型中，”token” 是指文本中的一个基本单位，用于模型的输入或输出。Token 可以是一个词、一个字符、或者更特定的文本片段，这取决于模型的设计和预处理步骤。在大多数现代 NLP 模型中，特别是在 GPT 这样的大型语言模型中，token 通常是通过一种称为 “subword tokenization” 的方法得到的，这种方法允许模型有效地处理未知词汇、减少词汇表的大小，并保持对词形变化的敏感性。在 GPT 和其他基于 Transformer 的模型中，tokenization 是模型能够理解和生成自然语言的基础。通过这种方式，模型能够学习到语言的复杂结构和语义，从而在各种任务上，如文本生成、翻译、摘要等，表现出卓越的性能。</p>
+</li>
+<li><p>temperature：在文本生成模型（如 GPT）的上下文中，temperature 是一个控制生成文本多样性的参数。它影响模型在选择下一个词时的随机性。temperature 参数通常设置在 0 到 1 之间，但也可以超过 1。<br>当 temperature 接近 0 时，模型倾向于选择概率最高的词，导致生成的文本非常确定性和重复性，但可能缺乏多样性和创造性。<br>当 temperature 设置为 1 时，模型按照词的概率分布来选择下一个词，保持原有的多样性。<br>当 temperature 大于 1 时，会增加生成文本的随机性和多样性，但同时也可能降低文本的连贯性和可读性。<br>通过调整 temperature 参数，可以在生成的文本的多样性和连贯性之间找到一个平衡点。</p>
+</li>
+<li><p>attention：在机器学习和自然语言处理（NLP）的背景下，特别是在像 GPT 这样的生成预训练变换器（Generative Pre-trained Transformer）模型中，注意力机制是一种重要的技术，它允许模型在处理输入数据时动态地聚焦于信息的不同部分。<br>简单来说，注意力机制使模型能够为输入序列中的每个元素（如单词或字符）分配一个权重，这些权重表示在生成每个输出元素时，输入序列的哪些部分更加重要。这种机制使得模型能够捕捉到长距离依赖关系，并提高对上下文的理解能力。</p>
+</li>
+</ul>
+
+                
+            </div>
+            <a class="read-more" href="/what-is-chatgpt-doing-and-why-does-it-work/">更多...</a>
+        </div>
+    
+        <div class="post ">
             <a class="post-title" href="/docker-memo/">
                 docker-memo
             </a>
             <div class="post-date">2024.04.15</div>
             <div class="post-excerpt">
                 
-                    <h3 id="What"><a href="#What" class="headerlink" title="What"></a>What</h3><p><strong>container</strong></p>
-<p><strong>image</strong> 用来创建容器的模板。包含运行应用所需的一起：代码、运行时、库、环境变量和配置文件。</p>
-<h3 id="How"><a href="#How" class="headerlink" title="How"></a>How</h3><p><strong>创建镜像</strong></p>
-<ul>
-<li>Dockerfile</li>
-<li>docker build <code>docker build -t &lt;image-name&gt; .</code></li>
-</ul>
-<p><strong>运行容器</strong></p>
-<ul>
-<li>docker run -d -p 80:80 &lt;image-name&gt;</li>
-<li><code>docker run -d -p 80:80 -v /path/to/host:/path/to/container &lt;image-name&gt;</code> 挂载卷</li>
-</ul>
-<p><strong>查看容器</strong></p>
-<ul>
-<li>docker ps</li>
-</ul>
-<p><strong>停止容器</strong></p>
-<ul>
-<li>docker stop <container-id></li>
-</ul>
-<p><strong>WebStorm 配置 Docker</strong></p>
-<ul>
-<li>Settings -&gt; Build, Execution, Deployment -&gt; Docker -&gt; + -&gt; TCP Socket -&gt; Engine API URL: tcp://localhost:2375</li>
-</ul>
-
+                    Whatcontainer<br>image 用来创建容器的模板。包含运行应用所需的一起：代码、运行时、库、环境变量和配置文件。<br>How创建镜像<br><br>Dockerfile<br>docker build docker build -t &lt;image-name&gt; .<br><br>运行容器<br><br>docker run ...
                 
             </div>
             <a class="read-more" href="/docker-memo/">更多...</a>
@@ -194,23 +206,10 @@
             <a class="read-more" href="/Django-memo/">更多...</a>
         </div>
     
-        <div class="post ">
-            <a class="post-title" href="/202403/">
-                202403
-            </a>
-            <div class="post-date">2024.03.11</div>
-            <div class="post-excerpt">
-                
-                    生活1日，晚上和小赛见面。5日，妈妈手术。8日，出院，下午去公司上班，晚上小赛带了水果和牛奶来我家。9日，为了方便带妈妈出行，决定买车。小赛陪我去看车。10日，小赛帮我和销售砍价买车。11日，提车。开车回家的路上不知道近光灯怎么开，靠着远光灯，在天黑透前回到了家。12日，车上牌。15日，第一次下雨的...
-                
-            </div>
-            <a class="read-more" href="/202403/">更多...</a>
-        </div>
-    
 </div>
 
 <div class="paginator">
-    <a class="extend prev" rel="prev" href="/page/4/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/">下一页</a>
+    <a class="extend prev" rel="prev" href="/page/4/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/">下一页</a>
 </div>
 
                 <div class="footer">
