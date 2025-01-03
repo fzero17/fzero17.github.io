@@ -58,6 +58,13 @@
             </li>
         
             <li>
+                <a href="/thoughts/"
+                >
+                    Thoughts
+                </a>
+            </li>
+        
+            <li>
                 <a href="https://fzero17.com/webmemo"
                  target="_blank" >
                     WebMemo
@@ -78,28 +85,28 @@
                 <!-- <div class="post-list">
     
     <div class="post">
-        <a class="post-title" href="/2024/08/14/change-etherpad-lite-plugin-install-registry/">修改etherpad-lite插件的npm源</a>
+        <a class="post-title" href="/202409/">202409</a>
+        <div class="post-date">2024.09.03</div>
+    </div>
+    
+    <div class="post">
+        <a class="post-title" href="/change-etherpad-lite-plugin-install-registry/">修改etherpad-lite插件的npm源</a>
         <div class="post-date">2024.08.14</div>
     </div>
     
     <div class="post">
-        <a class="post-title" href="/2024/08/14/202408/">202408</a>
+        <a class="post-title" href="/202408/">202408</a>
         <div class="post-date">2024.08.14</div>
     </div>
     
     <div class="post">
-        <a class="post-title" href="/2024/07/09/202407/">202407</a>
+        <a class="post-title" href="/202407/">202407</a>
         <div class="post-date">2024.07.09</div>
     </div>
     
     <div class="post">
-        <a class="post-title" href="/2024/06/15/202406/">202406</a>
+        <a class="post-title" href="/202406/">202406</a>
         <div class="post-date">2024.06.15</div>
-    </div>
-    
-    <div class="post">
-        <a class="post-title" href="/2024/06/06/front-checklist/">web-development-checklist</a>
-        <div class="post-date">2024.06.06</div>
     </div>
     
 </div>
@@ -112,25 +119,40 @@
 <div class="post-list">
     
         <div class="post post-featured">
-            <a class="post-title" href="/2024/08/14/change-etherpad-lite-plugin-install-registry/">
+            <a class="post-title" href="/202409/">
+                202409
+            </a>
+            <div class="post-date">2024.09.03</div>
+            <div class="post-excerpt">
+                
+                    <h3 id="日常"><a href="#日常" class="headerlink" title="日常"></a>日常</h3><p>1日。去爬了预谋已久的象鼻窝，整个象鼻窝还处于开发状态，山上除了人走出来的荆棘丛生小道没有任何大路。考虑到中午会太热，因此计划上午早点上山，没想到上午10点左右在山脚下已经热得心率爆表。开始爬山后，就有一种喘不过气的感觉，心跳得特别快，山上没有一丝风，在上升的过程中走几步就得停下来休息。这次有一个巨大的错误就是水带少了，走了两个小时左右，就耗光了大部分水。缺水再加上温度过高，后续的道路已经无法继续行进下去了，只能尽快下山寻找水资源。幸运的是很快找到了下山的路，否则真的担心自己倒在回去找水喝的路上。</p>
+<p>12日。长沙的高温天气终于结束了，今天最高温度天气预报显示只有31摄氏度，记录一下。</p>
+<p>18日。人生第一次进入健身房锻炼。</p>
+<h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><p>开始早睡早起后，精神状态好了很多，有再难再多的事情，先好好睡一觉再说！</p>
+<p>本月跑步18.30公里，比上个月增加了5公里。开始力量训练，去了健身房6次。</p>
+<h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>提交了一篇专利交底书。从构思和撰写花了大概一个月的时间。想法是一接到这个kpi就冒出来了，为了克服内心对写文档和想法被打回的恐惧，每次心理暗示自己先随便写写就好了，后面再修改，不要怕。没想到真写起来两天就写完，很快就通过了（还是有deadline的功劳）。<a target="_blank" rel="noopener" href="https://www.sohu.com/a/538295636_121124347">五分钟法则</a>真的很不错。</p>
+<h3 id="影视"><a href="#影视" class="headerlink" title="影视"></a>影视</h3><p>看了《大秦赋》前一部分。去搜了下秦朝是怎么灭亡的，才发现秦二世把自己的兄弟姐妹都杀掉了。秦始皇应该没有想到自己想长生不老国柞永存，到最后却没有传过二代吧。</p>
+
+                
+            </div>
+            <a class="read-more" href="/202409/">更多...</a>
+        </div>
+    
+        <div class="post ">
+            <a class="post-title" href="/change-etherpad-lite-plugin-install-registry/">
                 修改etherpad-lite插件的npm源
             </a>
             <div class="post-date">2024.08.14</div>
             <div class="post-excerpt">
                 
-                    <p>将etherpad-lite部署到服务器后，插件需要通过npm安装，由于服务器无法访问插件网站而安装失败，</p>
-<p>花了两天时间绕了一大圈去解决这个问题，耗费了不少精力。</p>
-<p>后来和AI一起阅读代码发现一行很简单的代码可以解决安装的问题。</p>
-<p>在<code>src/static/js/pluginfw/LinkInstaller.ts</code>文件中，将<code>npm</code>的源地址改为<code>https://registry.npmmirror.com</code>即可。</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">livePluginManager</span> = <span class="keyword">new</span> <span class="title class_">PluginManager</span>(&#123;</span><br><span class="line">            <span class="attr">npmRegistryUrl</span>: <span class="string">&#x27;https://registry.npmmirror.com/&#x27;</span>,</span><br><span class="line">            <span class="attr">pluginsPath</span>: pluginInstallPath,</span><br><span class="line">            <span class="attr">hostRequire</span>: <span class="literal">undefined</span>,</span><br><span class="line">            <span class="attr">cwd</span>: path.<span class="title function_">join</span>(settings.<span class="property">root</span>, <span class="string">&#x27;src&#x27;</span>)</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
-
+                    将etherpad-lite部署到服务器后，插件需要通过npm安装，由于服务器无法访问插件网站而安装失败，<br>花了两天时间绕了一大圈去解决这个问题，耗费了不少精力。<br>后来和AI一起阅读代码发现一行很简单的代码可以解决安装的问题。<br>在src/static/js/pluginfw/LinkInstalle...
                 
             </div>
-            <a class="read-more" href="/2024/08/14/change-etherpad-lite-plugin-install-registry/">更多...</a>
+            <a class="read-more" href="/change-etherpad-lite-plugin-install-registry/">更多...</a>
         </div>
     
         <div class="post ">
-            <a class="post-title" href="/2024/08/14/202408/">
+            <a class="post-title" href="/202408/">
                 202408
             </a>
             <div class="post-date">2024.08.14</div>
@@ -139,11 +161,11 @@
                     日常10-11。在张家界森林公园年票过期前最后去一次。去了很多次，竟然有点索然无味了。果然是熟悉的地方没有风景。不过金鞭溪还是很适合在炎热的夏天过去玩水的。24-25。在深圳。一次特别不愉快的旅程。<br>工作要挑战一个人无法完成的任务，心理压力特别大，总感觉内心特别焦虑。怎么缓解这种焦虑？找同事阐明自己...
                 
             </div>
-            <a class="read-more" href="/2024/08/14/202408/">更多...</a>
+            <a class="read-more" href="/202408/">更多...</a>
         </div>
     
         <div class="post ">
-            <a class="post-title" href="/2024/07/09/202407/">
+            <a class="post-title" href="/202407/">
                 202407
             </a>
             <div class="post-date">2024.07.09</div>
@@ -152,11 +174,11 @@
                     日常<br>2 日。小赛飞来长沙与我见面。在一起一直呆到 6 日早上离开长沙。依然有争吵，但是我希望这个争吵不要过夜，以后再慢慢地尽量不要争吵。<br>9 日。晚上和妹妹一起看了一个日本电影《浪客剑心》。<br>13 ～ 14 日。去十堰和小赛见面。十堰市整个市区都是在山里，整个市因为一个汽车厂而存在，一个很神奇的地...
                 
             </div>
-            <a class="read-more" href="/2024/07/09/202407/">更多...</a>
+            <a class="read-more" href="/202407/">更多...</a>
         </div>
     
         <div class="post ">
-            <a class="post-title" href="/2024/06/15/202406/">
+            <a class="post-title" href="/202406/">
                 202406
             </a>
             <div class="post-date">2024.06.15</div>
@@ -165,20 +187,7 @@
                     日常<br>1日。和小赛在武汉见面。<br>8日。回老家。<br>15日。在南昌，去了海昏侯博物馆。<br>26日。开始Duolingo打卡。<br><br>阅读《金钱心理学》<br><br>对待金钱要有耐心。对待任何事物都应该像对待金钱一样。<br><br>影视《人间正道是沧桑》<br><br>很喜欢董建昌这个角色。<br><br>工作<br>做事情不能偷懒。偷懒了是能看出来的。并且会...
                 
             </div>
-            <a class="read-more" href="/2024/06/15/202406/">更多...</a>
-        </div>
-    
-        <div class="post ">
-            <a class="post-title" href="/2024/06/06/front-checklist/">
-                web-development-checklist
-            </a>
-            <div class="post-date">2024.06.06</div>
-            <div class="post-excerpt">
-                
-                    在这里简单列举一下前端开发时需要进行一些 check 的事项。<br><br>图片加载失败显示默认图片<br>列表无数据显示空数据提示<br>列表是否分页正常<br>列表的 loading 状态<br>列表数据超出一屏时是否有滚动条<br>不同分辨率下的页面显示是否正常<br><br>...
-                
-            </div>
-            <a class="read-more" href="/2024/06/06/front-checklist/">更多...</a>
+            <a class="read-more" href="/202406/">更多...</a>
         </div>
     
 </div>
