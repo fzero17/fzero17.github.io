@@ -85,6 +85,11 @@
                 <!-- <div class="post-list">
     
     <div class="post">
+        <a class="post-title" href="/Django-memo/">Django memo</a>
+        <div class="post-date">2024.03.28</div>
+    </div>
+    
+    <div class="post">
         <a class="post-title" href="/202403/">202403</a>
         <div class="post-date">2024.03.11</div>
     </div>
@@ -104,11 +109,6 @@
         <div class="post-date">2023.12.19</div>
     </div>
     
-    <div class="post">
-        <a class="post-title" href="/atomic-habits/">《原子习惯》读书笔记</a>
-        <div class="post-date">2023.12.03</div>
-    </div>
-    
 </div>
 
 <div class="paginator">
@@ -119,18 +119,37 @@
 <div class="post-list">
     
         <div class="post post-featured">
+            <a class="post-title" href="/Django-memo/">
+                Django memo
+            </a>
+            <div class="post-date">2024.03.28</div>
+            <div class="post-excerpt">
+                
+                    <p>2024-03-28</p>
+<ul>
+<li>python替换清华源 <code>pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</code></li>
+<li>生成requirements.txt <code>pip3 freeze &gt; ./requirements.txt</code></li>
+<li>安装requirements.txt <code>pip3 install -r requirements.txt</code></li>
+<li>新建app <code>python manage.py startapp app_name</code></li>
+<li>设置默认密码 <code>python manage.py createsuperuser</code></li>
+<li>生成数据库迁移文件 <code>python manage.py makemigrations (app_name)</code></li>
+<li>执行数据库迁移 <code>python manage.py migrate (app_name)</code>（以上两个步骤可以根据model生成数据库表）</li>
+</ul>
+<h3 id="Python相关资料"><a href="#Python相关资料" class="headerlink" title="Python相关资料"></a>Python相关资料</h3><p><a target="_blank" rel="noopener" href="https://github.com/taizilongxu/interview_python">GitHub interview_python</a><br>了解Python的语言特性：可变对象和不可变对象，类变量，自省（运行时获取对象类型，类似于JavaScript的typeof instanceof）</p>
+
+                
+            </div>
+            <a class="read-more" href="/Django-memo/">更多...</a>
+        </div>
+    
+        <div class="post ">
             <a class="post-title" href="/202403/">
                 202403
             </a>
             <div class="post-date">2024.03.11</div>
             <div class="post-excerpt">
                 
-                    <h4 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h4><p>1日，晚上和小赛见面。<br>5日，妈妈手术。<br>8日，出院，下午去公司上班，晚上小赛带了水果和牛奶来我家。<br>9日，为了方便带妈妈出行，决定买车。小赛陪我去看车。<br>10日，小赛帮我和销售砍价买车。<br>11日，提车。开车回家的路上不知道近光灯怎么开，靠着远光灯，在天黑透前回到了家。<br>12日，车上牌。<br>15日，第一次下雨的晚上开车，什么都看不清。（后来才知道前挡风和后视镜可以加热）<br>16日，和小赛在武汉。去了武大樱花园，人山人海。两个人晚上本来打算去长江边走走，下雨了。出去附近找热干面吃，在武汉天地转了一圈啥都没吃到。（武汉人休息真早）<br>17日，去吃了汪记鱼糊粉。晚上回长沙，又开车送妹妹回学校，这次终于学会开灯和加热了，晚上视野都很好。<br>23日，和小赛自驾去了北山森林公园，一座小小的山爬得真费劲，因为赶时间回家做饭，没登顶就下来了。下次可以再去登顶，推荐指数3颗星。<br>24日，和小赛自驾去浏阳象形风景区。第一次开高速，速度上来了有点害怕。下了高速却又嫌速度慢（汗）。象形风景区环境很一般，配套设施差，不推荐。（甚至觉得有一点害怕）<br>25日，陪妈妈去医院复查。医生说不需要吃药，推荐经济宽裕的话做个基因检测，为了安心，让妈妈做了。希望有个好结果。<br>30日，晚上陪妈妈去迪卡侬买了几件衣服。把车停在长沙青少年宫下面，2个小时左右，收费4元。很便宜，以后可以常来。</p>
-<h4 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h4><p>看到了事线作者的公众号，读了他写的几篇文章，文章写得很有条理很清晰，明白为什么他能把这个app做出来了。<br>而我却空有想法却不去执行，执行能力是非常有待加强的。</p>
-<p>web.dev 上有一些最佳实践，例如：<a target="_blank" rel="noopener" href="https://web.dev/articles/carousel-best-practices?hl=zh-cn">轮播界面最佳实践</a>，可以看看。我通过它了解一个叫做 Scroll Snap 的属性，可以让滚动容器在滚动时停在特定的位置。</p>
-<h4 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h4><p>为什么会害怕向别人提出请求？<br>是害怕别人拒绝吗？不想得到一个不好的结果？害怕给别人留下一个不好的印象？<br>如何去克服这个害怕的心理呢？</p>
-<p>在做一个产品时，先不考虑UI，考虑它的功能完整性。</p>
-
+                    生活1日，晚上和小赛见面。5日，妈妈手术。8日，出院，下午去公司上班，晚上小赛带了水果和牛奶来我家。9日，为了方便带妈妈出行，决定买车。小赛陪我去看车。10日，小赛帮我和销售砍价买车。11日，提车。开车回家的路上不知道近光灯怎么开，靠着远光灯，在天黑透前回到了家。12日，车上牌。15日，第一次下雨的...
                 
             </div>
             <a class="read-more" href="/202403/">更多...</a>
@@ -173,19 +192,6 @@
                 
             </div>
             <a class="read-more" href="/burn-math-class/">更多...</a>
-        </div>
-    
-        <div class="post ">
-            <a class="post-title" href="/atomic-habits/">
-                《原子习惯》读书笔记
-            </a>
-            <div class="post-date">2023.12.03</div>
-            <div class="post-excerpt">
-                
-                    因为感觉自己写不好读书笔记（往往不知所云），又为了保持输出量，以后的读书笔记将大部分以书摘+书摘短评的形式出现。用这种方法让自己减少对输出这个大工程的恐怖（从小事做起）。<br>书名：《原子习惯》—— 细微改变带来巨大成就的实证法则（台版）<br>作者：詹姆斯·克利尔<br>作者是一名棒球运动员，在一次比赛中被球击中...
-                
-            </div>
-            <a class="read-more" href="/atomic-habits/">更多...</a>
         </div>
     
 </div>
