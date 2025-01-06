@@ -9,7 +9,9 @@
 <%- partial('_partial/paginator') %> -->
 
 <div class="post-list">
-    <% page.posts.each(function (post, index) { %>
+    <% page.posts
+    .filter(post => post.layout !== 'thoughts')
+    .each(function (post, index) { %>
         <div class="post <%= index === 0 ? 'post-featured' : '' %>">
             <a class="post-title" href="<%- url_for(post.path) %>">
                 <%= post.title %>

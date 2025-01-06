@@ -1,0 +1,16 @@
+<div class="thoughts-container">
+    <div class="thoughts-list">
+        <% site.posts.forEach(function(post) { %>
+            <% if (post.layout === 'thoughts') { %>
+                <div class="thought-item">
+                    <div class="thought-time">
+                        <%= date(post.date, 'YYYY-MM-DD HH:mm') %>
+                    </div>
+                    <div class="thought-content">
+                        <%- post.content %>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>
+    </div>
+</div>

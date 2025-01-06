@@ -424,3 +424,32 @@ a
     --color: #FF4772;
     color: #fff
 }
+
+/* Thoughts Layout */
+.thoughts-list {
+    max-width: 800px;
+    padding: 20px 0;
+}
+
+.thought-item {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: var(--bg-2);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.thought-item:hover {
+    transform: translateY(-2px);
+}
+
+.thought-time {
+    font-size: 0.875rem;
+    color: var(--font-color-2);
+    margin-bottom: 8px;
+}
+
+.thought-content {
+    color: var(--font-color-1);
+    line-height: 1.6;
+}
