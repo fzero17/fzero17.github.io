@@ -16,7 +16,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="修改etherpad-lite插件的npm源">
 <meta property="og:url" content="https://fzero17.com/change-etherpad-lite-plugin-install-registry/index.html">
-<meta property="og:site_name" content="fzero 的日常记录">
+<meta property="og:site_name" content="Debugging myself.">
 <meta property="og:description" content="将etherpad-lite部署到服务器后，插件需要通过npm安装，由于服务器无法访问插件网站而安装失败， 花了两天时间绕了一大圈去解决这个问题，耗费了不少精力。 后来和AI一起阅读代码发现一行很简单的代码可以解决安装的问题。 在src&#x2F;static&#x2F;js&#x2F;pluginfw&#x2F;LinkInstaller.ts文件中，将npm的源地址改为https:&#x2F;&#x2F;registry.npmmirror.com即可">
 <meta property="og:locale">
 <meta property="article:published_time" content="2024-08-14T01:08:13.000Z">
@@ -50,13 +50,11 @@
             <div class="paper-main">
                 
                     <div class="post-header">
-    <a class="logo" href="/">fzero 的日常记录</a>
+    <a class="logo" href="/">Debugging myself.</a>
     <!-- <div class="logo"><a href="/" title="Len"><img src="/img/logo.svg" alt="Len" aria-label="logo" height="20"></a></div> -->
         <ul class="nav">
             
             <li><a href="/">Home</a></li>
-            
-            <li><a href="/thoughts/">Thoughts</a></li>
             
             <li><a href="https://fzero17.com/webmemo">WebMemo</a></li>
             
@@ -97,7 +95,7 @@
                 
 </div>
                 <div class="footer">
-    <span>Copyright © 2024 fzero 的日常记录</span>
+    <span>Copyright © 2024 Debugging myself.</span>
     <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> with <a target="_blank" rel="noopener" href="https:///imzl.com/zenmind">ZenMind</a></span>
 </div>
 
