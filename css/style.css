@@ -47,6 +47,22 @@ a
     background: #fff;
 }
 
+/* 响应式优化 - 改善小屏幕体验 */
+@media screen and (max-width: 768px) {
+    .paper-main {
+        padding: 48px 6vw 24px;
+        border-radius: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .paper-main {
+        padding: 32px 4vw 24px;
+        border-radius: 12px;
+        margin: 0 8px;
+    }
+}
+
 .header
 {
     padding-bottom: 48px;
@@ -58,6 +74,21 @@ a
     justify-content: flex-start;
     align-content: center;
 }
+
+/* 响应式头部优化 */
+@media screen and (max-width: 768px) {
+    .header {
+        padding-bottom: 32px;
+        margin-bottom: 32px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+    }
+}
 .logo
 {
     font-size: 2rem;
@@ -65,6 +96,21 @@ a
     color: var(--font-color-1);
     margin-bottom: 23px;
     flex: 0 0 100%;
+}
+
+/* 响应式LOGO优化 */
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 1.8rem;
+        margin-bottom: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
 }
 .nav
 {
@@ -105,6 +151,19 @@ a
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: center;
+}
+
+/* 响应式文章头部优化 */
+@media screen and (max-width: 768px) {
+    .post-header {
+        margin-bottom: 32px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-header {
+        margin-bottom: 24px;
+    }
 }
 .post-header .logo
 {
@@ -330,6 +389,22 @@ a
     font-weight: 600;
     line-height: 1.5;
     color: var(--font-color-1);
+}
+
+/* 响应式文章标题优化 */
+@media screen and (max-width: 768px) {
+    .post-main-title {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-main-title {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
 }
 .post-meta
 {

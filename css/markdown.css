@@ -7,6 +7,21 @@
     letter-spacing: 0;
 }
 
+/* 响应式优化 - 改善小屏幕阅读体验 */
+@media screen and (max-width: 768px) {
+    .post-md {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-md {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+}
+
 .post-md h1,
 .post-md h2,
 .post-md h3,
@@ -53,6 +68,61 @@
     line-height: 1.2;
     padding: 12px 0;
 }
+
+/* 响应式标题优化 */
+@media screen and (max-width: 768px) {
+    .post-md h1 {
+        font-size: 1.8rem;
+        padding: 20px 0;
+    }
+    .post-md h2 {
+        font-size: 1.5rem;
+        padding: 18px 0;
+    }
+    .post-md h3 {
+        font-size: 1.3rem;
+        padding: 16px 0;
+    }
+    .post-md h4 {
+        font-size: 1.15rem;
+        padding: 14px 0;
+    }
+    .post-md h5 {
+        font-size: 1.1rem;
+        padding: 12px 0;
+    }
+    .post-md h6 {
+        font-size: 1.05rem;
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-md h1 {
+        font-size: 1.6rem;
+        padding: 16px 0;
+    }
+    .post-md h2 {
+        font-size: 1.4rem;
+        padding: 14px 0;
+    }
+    .post-md h3 {
+        font-size: 1.25rem;
+        padding: 12px 0;
+    }
+    .post-md h4 {
+        font-size: 1.1rem;
+        padding: 10px 0;
+    }
+    .post-md h5 {
+        font-size: 1.05rem;
+        padding: 8px 0;
+    }
+    .post-md h6 {
+        font-size: 1rem;
+        padding: 8px 0;
+    }
+}
 .post-md a
 {
     color: var(--font-color-0);
@@ -97,6 +167,23 @@
     box-sizing: border-box;
     padding: 5px 5px;
     border: 1px solid #ebebeb;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 响应式图片优化 */
+@media screen and (max-width: 768px) {
+    .post-md img {
+        padding: 3px;
+        border-radius: 3px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-md img {
+        padding: 2px;
+        border-radius: 2px;
+    }
 }
 .post-md hr
 {
@@ -140,6 +227,22 @@
     text-align: left;
     border-spacing: 0;
 }
+
+/* 响应式表格优化 */
+@media screen and (max-width: 768px) {
+    .post-md>table {
+        font-size: 0.9rem;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-md>table {
+        font-size: 0.8rem;
+    }
+}
 .post-md>table th
 {
     padding: 12px 0;
@@ -158,6 +261,29 @@
     background: #fff;
 }
 
+/* 响应式表格单元格优化 */
+@media screen and (max-width: 768px) {
+    .post-md>table th {
+        padding: 8px 4px;
+    }
+    
+    .post-md>table tr:nth-child(odd) td,
+    .post-md>table tr:nth-child(even) td {
+        padding: 8px 4px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-md>table th {
+        padding: 6px 2px;
+    }
+    
+    .post-md>table tr:nth-child(odd) td,
+    .post-md>table tr:nth-child(even) td {
+        padding: 6px 2px;
+    }
+}
+
 .post-md code
 {
     border-radius: 4px;
@@ -165,6 +291,23 @@
     padding: 2px 4px;
     color: #f8f8f2;
     font-size: 1rem;
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+
+/* 响应式代码块优化 */
+@media screen and (max-width: 768px) {
+    .post-md code {
+        font-size: 0.9rem;
+        padding: 1px 3px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-md code {
+        font-size: 0.85rem;
+        padding: 1px 2px;
+    }
 }
 
 .post-md .hljs-ln-numbers
