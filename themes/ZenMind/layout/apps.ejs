@@ -1,0 +1,31 @@
+<div class="post-main">
+  <div class="post-main-title">Apps</div>
+  <div class="post-meta">展示我做的一些东西</div>
+</div>
+
+<link rel="stylesheet" href="/css/apps.css">
+
+<div class="apps-wrapper">
+  <div class="apps-grid">
+    <% if (site.data.apps && site.data.apps.length) { %>
+      <% site.data.apps.forEach(function(app) { %>
+        <a class="app-card" href="<%= app.link %>" target="_blank" rel="noopener noreferrer">
+          <div class="app-icon">
+            <img src="<%= app.icon %>" alt="<%= app.title %>" />
+          </div>
+          <div class="app-body">
+            <div class="app-title"><%= app.title %></div>
+            <% if (app.subtitle) { %>
+              <div class="app-subtitle"><%= app.subtitle %></div>
+            <% } %>
+            <% if (app.description) { %>
+              <div class="app-desc"><%= app.description %></div>
+            <% } %>
+          </div>
+        </a>
+      <% }); %>
+    <% } else { %>
+      <div class="no-apps">暂无应用，稍后再来看看。</div>
+    <% } %>
+  </div>
+</div>

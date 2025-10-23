@@ -1,0 +1,20 @@
+- id: app-1
+  icon: /img/apps/app1.png
+  title: 思考记录
+  subtitle: 快速记录随想
+  description: 一个轻量化的想法记录应用，支持离线存储与导出功能，帮助你随手记录灵感。
+  link: https://example.com/app1
+
+- id: app-2
+  icon: /img/apps/app2.png
+  title: 写作助手
+  subtitle: 提升写作效率
+  description: 集成模板和结构化输入，帮助你更快完成文章草稿与编辑流程。
+  link: https://example.com/app2
+
+- id: app-3
+  icon: /img/apps/app3.png
+  title: 学习计划
+  subtitle: 习惯与目标追踪
+  description: 简洁的计划工具，支持任务分解、番茄计时与进度统计，帮助形成持续学习的习惯。
+  link: https://example.com/app3
