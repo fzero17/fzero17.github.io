@@ -1,11 +1,18 @@
 <div class="post-list">
-    <% page.posts .each(function (post, index) { %>
-        <div class="post <%= index === 0 ? 'post-featured' : '' %>">
-            <div class="post-date"><%- date(post.date, "YYYY-MM-DD" ) %></div>
-            <a class="post-title" href="<%- url_for(post.path) %>">
-                <%= post.title %>
-            </a>
-        </div>
-        <% }) %>
+    <% page.posts .each(function (post) { %>
+        <article class="post">
+            <% if (post.categories && post.categories.length > 0) { %>
+                <div class="post-type"><%= post.categories.data[0].name %></div>
+            <% } %>
+            <div class="post-date"><%- date(post.date, "YYYY.MM.DD" ) %></div>
+            <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+            <% if (post.excerpt && post.excerpt.length > 0) { %>
+                <div class="post-excerpt"><%- post.excerpt %></div>
+            <% } %>
+        </article>
+    <% }) %>
+</div>
+<div class="home-archive">
+    <a href="<%- url_for('archives') %>">ARCHIVE →</a>
 </div>
 <%- partial('_partial/paginator') %>
